@@ -1,4 +1,4 @@
-# Projeto GraphQL Java Example
+# Projeto GraphQL Java
 
 Projeto público desenvolvido por **Marcio Garcia**  
 [LinkedIn: Marcio de Almeida Garcia](https://www.linkedin.com/in/marcio-de-almeida-garcia-3a9ab6227/)
