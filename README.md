@@ -32,11 +32,17 @@ O objetivo é mostrar, na prática, a implementação de endpoints GraphQL para 
 
 ## Como Executar Localmente
 
+---
+
 1. **Pré-requisitos**  
+
    - Java 21
    - Maven instalado
 
+---
+
 2. **Clonar o repositório**
+
    ```sh
    git clone (https://github.com/timarciogarcia/GraphQL.git)
    cd graphQL
@@ -44,6 +50,7 @@ O objetivo é mostrar, na prática, a implementação de endpoints GraphQL para 
 ---
 
 3. **Executar**
+   
    Melhor no Postman ou outro similar, necessita o envio de json/body para todas as operações
    http://localhost:8081/graphql
 
@@ -65,75 +72,82 @@ O objetivo é mostrar, na prática, a implementação de endpoints GraphQL para 
 ---
 
 5. O que é GraphQL? E qual a diferença para uma API RESTful?
-  GraphQL é uma linguagem de consulta criada pelo Facebook que permite aos clientes (frontend, apps, etc.) solicitarem exatamente os dados de que precisam, sem excessos ou faltas.
-  Ao contrário de APIs REST, que possuem múltiplos endpoints com respostas fixas, uma API GraphQL expõe geralmente um único endpoint, e o cliente define a estrutura da resposta por meio da query enviada.
-  
-  Principais diferenças entre REST e GraphQL
-  | REST                                                 | GraphQL                                          |
-  | ---------------------------------------------------- | ------------------------------------------------ |
-  | Múltiplos endpoints (`/usuarios`, `/produtos`, etc.) | Normalmente um único endpoint (`/graphql`)       |
-  | Backend define todos os campos retornados            | Cliente escolhe exatamente os campos da resposta |
-  | Overfetching/Underfetching frequente                 | Só retorna o que foi solicitado                  |
-  | Geralmente precisa versionar (`/v1/usuarios`)        | Menos necessidade de versionamento               |
-  | Usa GET, POST, PUT, DELETE, etc.                     | Normalmente apenas POST                          |
 
-  ## Exemplo prático
-  ## REST:
-  http
-  GET /usuarios/1
-  {
-    "id": 1,
-    "nome": "João",
-    "email": "joao@email.com",
-    "pets": [
-      { "nome": "Rex", "tipo": "Cachorro" }
-    ]
-  }
-  ## GraphQL:  
-  graphql
-  query {
-    usuario(id: 1) {
-      nome
-      pets {
-        nome
-      }
-    }
-  }
-
-  No GraphQL, você solicita apenas os campos que precisa, tornando a resposta mais enxuta e eficiente.
-
-  ---
-  
-  ## Como consumir esta API GraphQL
-  Depois que a aplicação estiver rodando, você pode acessar o Playground/GraphiQL pelo navegador para testar suas queries e mutations, ou usar ferramentas como Insomnia ou Postman.
-  
-  Exemplos de uso
-  Query (consulta):
-  
-  graphql
-  query {
-    listarUsuarios {
-      id
-      nome
-      email
-    }
-  }
-  Mutation (alteração):
-  
-  graphql
-  mutation {
-    criarUsuario(nome: "Maria", email: "maria@email.com") {
-      id
-      nome
-    }
-  }
-  
-  Consulte o schema GraphQL pelo Playground para ver todas as queries, mutations e tipos disponíveis.
-
-  ---
-  
-  ## Observações
-  Este projeto é didático, mas pode ser facilmente expandido para aplicações reais.
-  O schema GraphQL pode ser dividido em vários arquivos .graphqls e organizado em subpastas dentro de /resources/graphql para facilitar a manutenção.
-  As exceções da API são tratadas e estruturadas de forma amigável, facilitando o diagnóstico de erros.
+     GraphQL é uma linguagem de consulta criada pelo Facebook que permite aos clientes (frontend, apps, etc.) solicitarem exatamente os dados de que precisam, sem excessos ou faltas.
+     Ao contrário de APIs REST, que possuem múltiplos endpoints com respostas fixas, uma API GraphQL expõe geralmente um único endpoint, e o cliente define a estrutura da resposta por meio da query enviada.
+     
+     Principais diferenças entre REST e GraphQL
+   
+     | REST                                                 | GraphQL                                          |
+     | ---------------------------------------------------- | ------------------------------------------------ |
+     | Múltiplos endpoints (`/usuarios`, `/produtos`, etc.) | Normalmente um único endpoint (`/graphql`)       |
+     | Backend define todos os campos retornados            | Cliente escolhe exatamente os campos da resposta |
+     | Overfetching/Underfetching frequente                 | Só retorna o que foi solicitado                  |
+     | Geralmente precisa versionar (`/v1/usuarios`)        | Menos necessidade de versionamento               |
+     | Usa GET, POST, PUT, DELETE, etc.                     | Normalmente apenas POST                          |
+   
+     ## Exemplo prático
+     ## REST:
+     http
+     GET /usuarios/1
+     {
+       "id": 1,
+       "nome": "João",
+       "email": "joao@email.com",
+       "pets": [
+         { "nome": "Rex", "tipo": "Cachorro" }
+       ]
+     }
+     ## GraphQL:  
+     graphql
+     query {
+       usuario(id: 1) {
+         nome
+         pets {
+           nome
+         }
+       }
+     }
+   
+     No GraphQL, você solicita apenas os campos que precisa, tornando a resposta mais enxuta e eficiente.
+   
+     ---
+     
+     ## Como consumir esta API GraphQL
+   
+     Depois que a aplicação estiver rodando, você pode acessar o Playground/GraphiQL pelo navegador para testar suas queries e mutations, ou usar ferramentas como Insomnia ou Postman.
+     
+     Exemplos de uso
+   
+     Query (consulta):
+     
+     graphql
+   
+     query {
+       listarUsuarios {
+         id
+         nome
+         email
+       }
+     }
+     Mutation (alteração):
+     
+     graphql
+   
+     mutation {
+       criarUsuario(nome: "Maria", email: "maria@email.com") {
+         id
+         nome
+       }
+     }
+     
+     Consulte o schema GraphQL pelo Playground para ver todas as queries, mutations e tipos disponíveis.
+   
+     ---
+     
+     ## Observações
+   
+     Este projeto é didático, mas pode ser facilmente expandido para aplicações reais.
+     O schema GraphQL pode ser dividido em vários arquivos .graphqls e organizado em subpastas dentro de /resources/graphql para facilitar a manutenção.
+     As exceções da API são tratadas e estruturadas de forma amigável, facilitando o diagnóstico de erros.
 
