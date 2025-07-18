@@ -38,14 +38,14 @@ O objetivo é mostrar, na prática, a implementação de endpoints GraphQL para 
 
 2. **Clonar o repositório**
    ```sh
-   git clone <URL-DO-SEU-REPOSITORIO>
+   git clone (https://github.com/timarciogarcia/GraphQL.git)
    cd graphQL
 
 ---
 
 3. **Executar**
 
-   http://localhost:8080/graphiql
+   http://localhost:8081/graphiql
 
 ---
 
