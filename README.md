@@ -44,8 +44,8 @@ O objetivo é mostrar, na prática, a implementação de endpoints GraphQL para 
 ---
 
 3. **Executar**
-
-   http://localhost:8081/graphiql
+   Melhor no Postman ou outro similar, necessita o envio de json/body para todas as operações
+   http://localhost:8081/graphql
 
 ---
 
